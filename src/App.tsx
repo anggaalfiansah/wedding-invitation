@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import dayjs from "dayjs";
+import locale_id from "dayjs/locale/id";
+import "./App.css";
+import Detail from "./pages/Detail";
+import Welcome from "./pages/Welcome";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
+  const [isOpened, setIsOpened] = useState(false);
+
+  dayjs.locale(locale_id);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <>{isOpened ? <Detail /> : <Welcome setIsOpened={setIsOpened} />}</>,
+    },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={router} />
     </div>
   );
 }

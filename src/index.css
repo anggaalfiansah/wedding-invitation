@@ -5,9 +5,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.blink {
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@font-face {
+  font-family: 'billy_signature';
+  font-style: normal;
+  font-weight: normal;
+  src: local('billy_signature'), url('./assets/font/billy_signature.otf') format("opentype");
+}
+
+@font-face {
+  font-family: 'billy_signature_slant';
+  font-style: normal;
+  font-weight: normal;
+  src: local('billy_signature_slant'), url('./assets/font/billy_signature_slant.ttf') format("truetype");
 }
