@@ -1,13 +1,14 @@
-import { Box, Button, Text } from "@chakra-ui/react";
 import { FC } from "react";
 import dayjs from "dayjs";
 import Countdown from "react-countdown";
+import { Box, Button, Text } from "@chakra-ui/react";
 import { FaRegCalendarPlus } from "react-icons/fa";
+import { CONFIG } from "utils/config";
 
 const CountdownComponent: FC = () => {
   return (
     <Countdown
-      date={new Date("2023-01-08 08:00")}
+      date={new Date(CONFIG.TANGGAL_PERNIKAHAN)}
       renderer={({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
           // Render a complete state
@@ -64,14 +65,10 @@ const CountdownComponent: FC = () => {
                 </Box>
               </Box>
               <Text color={"#fff"} marginY={"2rem"}>
-                {dayjs("2023-01-08").format("dddd, DD MMMM YYYY")}
+                {dayjs(CONFIG.TANGGAL_PERNIKAHAN).format("dddd, DD MMMM YYYY")}
               </Text>
               <Box marginY={"1rem"}>
-                <a
-                  href="https://www.google.com/calendar/render?action=TEMPLATE&text=Pernikahan%20Angga%20dan%20Sarah&details=Acara%20Pernikahan%20Angga%20dan%20Sarah&location=Klumutan%20RT.05%20RW.012%20Depok%2C%20Kec.%20Toroh%2C%20Kabupaten%20Grobogan%2C%20Jawa%20Tengah%2C%20Indonesia&dates=20230108T000000Z%2F20230108T130000Z&ctz=Asia%2FJakarta"
-                  rel="noreferrer"
-                  target="_blank"
-                >
+                <a href={CONFIG.LINK_CALENDAR} rel="noreferrer" target="_blank">
                   <Button>
                     <FaRegCalendarPlus />
                     <Text marginX={"0.5rem"}>Simpan acara ke kalender</Text>
