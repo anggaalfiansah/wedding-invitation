@@ -1,8 +1,8 @@
-# Movie App
+# ANGSA Wedding Invitation
 
 This application is developed by using VITE, REACT, TYPESCRIPT, CHAKRA-UI.
 
-DEMO [wedding-invitation-fawn-pi.vercel.app](wedding-invitation-fawn-pi.vercel.app)
+DEMO [wedding-invitation-fawn-pi.vercel.app](https://wedding-invitation-fawn-pi.vercel.app)
 
 ## Screenshots
 
